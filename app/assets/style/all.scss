@@ -12,6 +12,10 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+$primary: #fb5830;
+$secondary: #d0021c;
+$input-font-size: 0.8rem;
+
 $bg-color: #14151a;
 $bg-card: #1e1e26;
 // 3. Include remainder of required Bootstrap stylesheets
