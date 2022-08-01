@@ -1,7 +1,33 @@
 $(function () {
       console.log('Hello Bootstrap5');
 
-      // 側邊欄位顯示更多按鈕功能
+      // 電腦板側邊欄位顯示更多按鈕功能
+      function collapsePcHandler() {
+        const collapse = document.getElementById("filter-collapse");
+        const collapseBtn = document.getElementById("filter-collapse-btn");
+
+        const collapseBtnText = document.getElementById("filter-btn-text");
+        const filterIcon = document.getElementById("filter-icon");
+
+        const bsCollapse = new bootstrap.Collapse(collapse, {
+          toggle: false
+        })
+
+        collapseBtn.addEventListener("click", function () {
+          bsCollapse.toggle();
+        })
+
+        collapse.addEventListener("show.bs.collapse", function () {
+          collapseBtnText.innerText = "收起";
+          filterIcon.classList.add("transform-rotate-180");
+        })
+
+        collapse.addEventListener("hide.bs.collapse", function () {
+          collapseBtnText.innerText = "顯示更多";
+          filterIcon.classList.remove("transform-rotate-180");
+        })
+      }
+      // 手機板側邊欄位顯示更多按鈕功能
       function collapseMobileHandler() {
         const collapseMobile = document.getElementById("filter-mobile-collapse");
         const collapseBtnMobile = document.getElementById("filter-mobile-collapse-btn");
@@ -49,7 +75,7 @@ $(function () {
 
 
 
-
+        collapsePcHandler();
         collapseMobileHandler();
         offcanvasHandler();
       });
