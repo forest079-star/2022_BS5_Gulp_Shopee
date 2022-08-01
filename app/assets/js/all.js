@@ -112,6 +112,18 @@ $(function () {
 
       }
 
+      // Modal
+      function modalHandler(){
+        const cartBtn = document.getElementById("cart-btn");
+        const cart = new bootstrap.Modal(document.getElementById("cart"), {
+          keyboard: false
+        });
+
+        cartBtn.addEventListener("click", function(){
+          cart.toggle();
+        });
+      }
+
 
 
 
@@ -124,4 +136,5 @@ $(function () {
         collapseMobileHandler();
         offcanvasHandler();
         searchHandler();
+        modalHandler();
       });
