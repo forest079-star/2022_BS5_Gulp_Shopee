@@ -52,7 +52,7 @@ $(function () {
           filterIcon.classList.remove("transform-rotate-180");
         })
       }
-      
+
       // 手機板側邊欄位顯示更多按鈕功能
       function collapseMobileHandler() {
         const collapseMobile = document.getElementById("filter-mobile-collapse");
@@ -93,6 +93,25 @@ $(function () {
         })
       }
 
+      // 載入商品 loading
+      function searchHandler(){
+        const searchBtn = document.getElementById("search-btn");
+        const itemsWrapper = document.getElementById("items-wrapper");
+        const spinnerWrapper = document.getElementById("spinner-wrapper");
+
+
+        searchBtn.addEventListener("click", function(e){
+          itemsWrapper.classList.add("d-none");
+          spinnerWrapper.classList.remove("d-none");
+
+          setTimeout(() => {
+             itemsWrapper.classList.remove("d-none");
+             spinnerWrapper.classList.add("d-none");
+          }, 2000);
+        })
+
+      }
+
 
 
 
@@ -104,4 +123,5 @@ $(function () {
         collapsePcHandler();
         collapseMobileHandler();
         offcanvasHandler();
+        searchHandler();
       });
