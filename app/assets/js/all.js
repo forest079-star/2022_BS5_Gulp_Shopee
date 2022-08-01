@@ -1,6 +1,31 @@
 $(function () {
       console.log('Hello Bootstrap5');
 
+      // 商品 render
+      function renderItems(){
+        const list = document.getElementById("list");
+
+        for (let i = 0; i < 20; i++) {
+          const colItem = document.createElement("div")
+          colItem.classList.add("col");
+          colItem.innerHTML = `
+            <div class="mt-4">
+              <div class="card">
+                  <img src="./assets/images/seed.jpg" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title text-primary fw-bold">$2200</h5>
+                    <p class="card-text fs-7">這是一件商品，這是一件商品，這是一件商品，這是一件商品。</p>
+                    <p class="card-text text-end fs-8">已售出 1000</p>
+                  </div>
+                  <span class="badge bg-primary rounded-0 position-absolute top-0 end-0">雙12優惠</span>
+                </div>
+              </div>
+            </div>
+          `;
+          list.appendChild(colItem);
+        }
+      }
+
       // 電腦板側邊欄位顯示更多按鈕功能
       function collapsePcHandler() {
         const collapse = document.getElementById("filter-collapse");
@@ -27,6 +52,7 @@ $(function () {
           filterIcon.classList.remove("transform-rotate-180");
         })
       }
+      
       // 手機板側邊欄位顯示更多按鈕功能
       function collapseMobileHandler() {
         const collapseMobile = document.getElementById("filter-mobile-collapse");
@@ -74,7 +100,7 @@ $(function () {
 
 
 
-
+        renderItems();
         collapsePcHandler();
         collapseMobileHandler();
         offcanvasHandler();
