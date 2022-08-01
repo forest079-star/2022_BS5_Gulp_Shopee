@@ -648,6 +648,21 @@ $utilities: map-merge(
         visible: visible,
         invisible: hidden,
       )
+    ),
+    "cursor": (responsive: true,
+      property: cursor,
+      class: cursor,
+      values: pointer,
+    ),
+    "transform": (responsive: true,
+      property: transform,
+      values: (rotate-180: rotate(180deg),
+      ),
+    ),
+    "transition": (responsive: true,
+      property: transition,
+      values: (transform: transform 0.2s,
+      ),
     )
     // scss-docs-end utils-visibility
   ),
